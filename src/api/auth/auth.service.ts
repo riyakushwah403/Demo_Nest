@@ -1,8 +1,8 @@
 import { Injectable ,NotFoundException,ConflictException,UnauthorizedException} from '@nestjs/common';
 
-import { UserDto } from 'src/user/Dto/userDto';
-import { User, UserDocument } from 'src/user/schema/user.schema';
-import { Encrypt } from 'src/user/encrypt';
+import { UserDto } from '../user/Dto/userDto';
+import { User,UserDocument } from '../user/schema/user.schema';
+import { Encrypt } from '../user/encrypt';
 import { InjectModel } from '@nestjs/mongoose';
 import { JwtService } from '@nestjs/jwt';
 import { Model } from 'mongoose';

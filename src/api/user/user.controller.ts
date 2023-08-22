@@ -11,10 +11,10 @@ import {
   Query,
 } from '@nestjs/common';
 import { UserDto } from './Dto/userDto';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger/dist';
+import { ApiBearerAuth, ApiHeader, ApiTags } from '@nestjs/swagger/dist';
 import { UserService } from './user.service';
 import { userUpdateDto } from './Dto/userUpdateDto';
-import { JwtAuthGuard, AdminAuthGuard } from './guard/AdminGuard';
+import { JwtAuthGuard, AdminAuthGuard } from 'src/guard/AdminGuard';
 import { request } from 'express';
 
 @ApiTags('User')
@@ -32,14 +32,10 @@ export class UserController {
 
   @Get('find/:id')
   @ApiBearerAuth()
+ 
   getOneUser(@Param('id') id: string)  {
-   
     console.log(request['user']._id.toString());
-    console.log(id);
-    
     return this.userService.findById(id);
-   
-    
   }
 
   @Patch('update')

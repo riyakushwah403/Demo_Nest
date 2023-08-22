@@ -5,8 +5,8 @@
   import { User, UserSchema } from './schema/user.schema';
   import { JwtModule } from '@nestjs/jwt';
   import { ConfigModule, ConfigService } from '@nestjs/config';
-  import { JWTConfig } from './config/jwt'
-  import { AuthMiddleware } from './middleware/Auth.middleware';
+  import { JWTConfig } from 'src/config/jwt';
+import { AuthMiddleware } from 'src/middleware/Auth.middleware';
 
 
   @Module({
